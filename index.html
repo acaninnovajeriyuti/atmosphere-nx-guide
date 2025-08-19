@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Dinámica de Instalación de Atmosphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Guía de Instalación de Atmosphere en Nintendo Switch</h1>
+        <p>Aprende a instalar el custom firmware de forma fácil y segura.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#rcm">Consolas RCM (no parcheadas)</a></li>
+            <li><a href="#modchip">Consolas con Modchip</a></li>
+            <li><a href="#solucion-problemas">Solución de Problemas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <p>Esta guía te enseñará a instalar **Atmosphere**, el custom firmware (CFW) más popular para Nintendo Switch. Sigue los pasos cuidadosamente según el tipo de tu consola.</p>
+            <p><strong>⚠️ Aviso:</strong> La modificación de tu consola puede anular la garantía. Procede bajo tu propio riesgo y siempre utiliza fuentes oficiales.</p>
+        </section>
+        
+        <section id="rcm">
+            <h2>Consolas RCM (no parcheadas)</h2>
+            <p>Este método es para consolas que son vulnerables a la falla de hardware RCM (Recovery Mode). Verifica el número de serie de tu Switch para confirmar si es vulnerable.</p>
+            <div class="step-list">
+                <div class="step" onclick="toggleStep(this)">
+                    <h3>Paso 1: Descargar los archivos necesarios</h3>
+                    <div class="step-content">
+                        <ul>
+                            <li><a href="https://github.com/Atmosphere-NX/Atmosphere/releases" target="_blank">Atmosphere</a> (última versión)</li>
+                            <li><a href="https://github.com/CTCaer/hekate/releases" target="_blank">Hekate</a> (última versión)</li>
+                            <li><a href="https://github.com/borntohonk/payloads/releases" target="_blank">Fusee</a> (Payload)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step" onclick="toggleStep(this)">
+                    <h3>Paso 2: Preparar la tarjeta microSD</h3>
+                    <div class="step-content">
+                        <p>Formatea tu tarjeta microSD a <strong>FAT32</strong>. Luego, extrae los archivos descargados y copia todo el contenido a la raíz de la tarjeta.</p>
+                    </div>
+                </div>
+                <div class="step" onclick="toggleStep(this)">
+                    <h3>Paso 3: Entrar en modo RCM e inyectar el payload</h3>
+                    <div class="step-content">
+                        <p>Inserta la microSD en la Switch. Con un <strong>jig</strong>, entra en modo RCM. Conecta la consola a tu PC y usa un inyector de payload como <strong>TegraRcmGUI</strong> para enviar el archivo `.bin` de Hekate.</p>
+                    </div>
+                </div>
+                <div class="step" onclick="toggleStep(this)">
+                    <h3>Paso 4: Finalizar la instalación</h3>
+                    <div class="step-content">
+                        <p>Una vez inyectado Hekate, sigue las instrucciones en la pantalla de la Switch para instalar Atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modchip">
+            <h2>Consolas con Modchip</h2>
+            <p>Si tu consola ya tiene un chip de hardware instalado, el proceso es mucho más simple ya que no necesitas inyectar el payload manualmente.</p>
+            <div class="step-list">
+                <div class="step" onclick="toggleStep(this)">
+                    <h3>Paso 1: Descargar y copiar los archivos</h3>
+                    <div class="step-content">
+                        <p>Descarga los archivos de **Atmosphere** y **Hekate** de los enlaces oficiales y cópialos a la raíz de tu tarjeta microSD.</p>
+                    </div>
+                </div>
+                <div class="step" onclick="toggleStep(this)">
+                    <h3>Paso 2: Encender la consola</h3>
+                    <div class="step-content">
+                        <p>Inserta la microSD y enciende la consola. El modchip se encargará de cargar Hekate o Atmosphere automáticamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="solucion-problemas">
+            <h2>Solución de Problemas Comunes</h2>
+            <p>Si algo sale mal, aquí hay algunas soluciones rápidas:</p>
+            <ul>
+                <li><strong>La PC no detecta la Switch:</strong> Asegúrate de tener los drivers correctos instalados (Zadig para Windows).</li>
+                <li><strong>Pantalla negra después de la inyección:</strong> Verifica que estás en modo RCM y que el payload es compatible.</li>
+                <li><strong>Errores de archivos:</strong> Vuelve a descargar los archivos y asegúrate de que no estén corruptos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Guía no oficial | Creado para GitHub Pages</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
